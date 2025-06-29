@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Yeseva+One&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+  <div class="container">
+    <header class="header">
+      <div class="decorative-border decorative-border-top">
+        <div class="decorative-border-primary decorative-border-mask-top"></div>
+        <div class="decorative-border-secondary decorative-border-mask-top"></div>
+      </div>
+      <nav class="nav-bar">
+        <div class="nav-logo">
+          <div class="ticket">
+            <a href="#" class="ticket-content">PORTFOLIO</a>
+          </div>
+        </div>
+
+        <a class="nav-bar-link" href="#home">Home</a>
+        <a class="nav-bar-link" href="#about">About</a>
+        <a class="nav-bar-link" href="#contact">Contact</a>
+      </nav>
+      <hr class="hr" />
+    </header>
+    <main class="main">
+      <section class="hero" id="home">
+        <h1 class="hero-title">{{ contact_info.name }}</h1>
+        <p class="hero-tagline">Design with Flavor!</p>
+      </section>
+
+      <section class="intro">
+        <div class="intro-image">
+          <img src="{{ url_for('static', filename='assets/adarsh-poddar-illustration.svg') }}"
+            alt="Illustration of Dev Patel" />
+        </div>
+        <div class="intro-text">
+          <h2 class="text-heading">{{ content.intro.title }}</h2>
+          <p class="text-body">
+            {{ content.intro.description }}
+          </p>
+        </div>
+      </section>
+
+      <section class="about text-body" id="about">
+        <div class="about-title">
+          <div class="ticket">
+            <h2 class="ticket-content">About Me</h2>
+          </div>
+        </div>
+
+
+        <div class="about-grid">
+          <div class="about-item ticket" id="skillsTechTicket">
+            <div class="about-content ticket-content">
+              <div class="about-image-container">
+                <img class="about-image-dark" src="{{ url_for('static', filename='assets/skill_and_tech - dark.svg') }}"
+                  alt="Skills & Tech" />
+                <img class="about-image-light" src="{{ url_for('static', filename='assets/skill_and_tech.svg') }}"
+                  alt="Skills & Tech" />
+              </div>
+              <div class="about-text-container" id="skillsTechText" style="display: none;">
+                <h3>{{ content.sections[0].title }}</h3>
+                <hr class="hr" />
+                <p>
+                  {{ content.sections[0].description }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-item ticket" id="experienceTicket">
+            <div class=" about-content ticket-content">
+              <div class="about-image-container">
+                <img class="about-image-dark" src="{{ url_for('static', filename='assets/experience - dark.svg') }}"
+                  alt="Experience" class="about-image" />
+                <img class="about-image-light" src="{{ url_for('static', filename='assets/experience.svg') }}"
+                  alt="Experience" class="about-image" />
+              </div>
+
+              <div class="about-text-container" id="experienceText" style="display: none;">
+                <h3>{{ content.sections[1].title }}</h3>
+                <hr class="hr" />
+                <p>
+                  {{ content.sections[1].description }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="about-item ticket" id="beyondCodeTicket">
+            <div class="about-content ticket-content">
+              <div class="about-image-container">
+                <img class="about-image-dark" src="{{ url_for('static', filename='assets/beyond_code - dark.svg') }}"
+                  alt="Beyond Code" class="about-image" />
+                <img class="about-image-light" src="{{ url_for('static', filename='assets/beyond_code.svg') }}"
+                  alt="Beyond Code" class="about-image" />
+              </div>
+              <div class="about-text-container" id="beyondCodeText" style="display: none;">
+                <h3>{{ content.sections[2].title }}</h3>
+                <hr class="hr" />
+                <p>
+                  {{ content.sections[2].description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-title">
+          <div class="ticket">
+            <h2 class="ticket-content">Get In Touch</h2>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <div class="contact-form ticket">
+            <form class="ticket-content">
+              <div class="form-group">
+                <label class="input-label">Name</label>
+                <input type="text" name="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <div class="ticket">
+                  <button type="submit" class="ticket-content submit-btn">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="contact-info ticket">
+            <div class="ticket-content">
+              <h3>Contact Info</h3>
+              <hr class="hr" />
+              <div class="contact-info-details">
+                <p>Email: {{ contact_info.email }}</p>
+                <p>Phone: {{ contact_info.phone }}</p>
+                <p>Address: {{ contact_info.address }}</p>
+              </div>
+
+              <div class="contact-info-links">
+                <div>
+                  <p>
+                    LinkedIn:
+                  </p>
+                  <a href="{{ contact_info.linkedin }}">{{ contact_info.linkedin }}</a>
+                </div>
+
+                <div>
+                  <p>
+                    GitHub:
+                  </p>
+                  <a href="{{ contact_info.github }}">{{ contact_info.github }}</a>
+                </div>
+                <div>
+                  <p>
+                    Resume:
+                  </p>
+                  <a href="{{ url_for('static', filename='assets/resume.pdf') }}" download>Download Resume</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <hr class="hr" />
+        <div class="decorative-border decorative-border-bottom">
+          <div class="decorative-border-primary decorative-border-mask-bottom"></div>
+          <div class="decorative-border-secondary decorative-border-mask-bottom"></div>
+        </div>
+      </div>
+      <div class="footer-content">
+        <p>Copyright © 2025 Adarsh Poddar</p>
+      </div>
+    </footer>
+    <div id="toast-container"></div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
