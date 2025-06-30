@@ -1,0 +1,21 @@
+{
+  "name": "Adarsh",
+  "email": "poddaradarsh2@gmail.com",
+  "phone": "+91 8308447419",
+  "address": "Mumbai, India",
+  "city": "Mumbai",
+  "state": "Maharashtra",
+  "zip": "400001",
+  "country": "India",
+  "resume_link":"https://raw.githubusercontent.com/adarsh270699/resume/refs/heads/main/Resume.pdf",
+  "links": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/adarsh-poddar/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/adarsh270699"
+    }
+  ]
+}

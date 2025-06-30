@@ -5,12 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
-  <link rel="icon" href="{{ url_for('static', filename='assets/favicon.svg') }}"
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}"
     type="image/svg+xml">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Yeseva+One&display=swap" rel="stylesheet" />
+  <script>
+    window.va = window.va || function () { (window.va.q = window.va.q || []).push(arguments); };
+  </script>
+  <script src="/_vercel/insights/script.js" defer></script>
 </head>
 
 <body>
@@ -45,7 +49,7 @@
 
       <section class="intro">
         <div class="intro-image">
-          <img src="{{ url_for('static', filename='assets/adarsh-poddar-illustration.svg') }}"
+          <img src="{{ url_for('static', filename='images/adarsh-poddar-illustration.svg') }}"
             alt="Illustration of Dev Patel" />
         </div>
         <div class="intro-text">
@@ -68,9 +72,9 @@
           <div class="about-item ticket" id="skillsTechTicket">
             <div class="about-content ticket-content">
               <div class="about-image-container">
-                <img class="about-image-dark" src="{{ url_for('static', filename='assets/skill_and_tech_dark.svg') }}"
+                <img class="about-image-dark" src="{{ url_for('static', filename='images/skill_and_tech_dark.svg') }}"
                   alt="Skills & Tech" />
-                <img class="about-image-light" src="{{ url_for('static', filename='assets/skill_and_tech.svg') }}"
+                <img class="about-image-light" src="{{ url_for('static', filename='images/skill_and_tech.svg') }}"
                   alt="Skills & Tech" />
               </div>
               <div class="about-text-container" id="skillsTechText" style="display: none;">
@@ -86,9 +90,9 @@
           <div class="about-item ticket" id="experienceTicket">
             <div class=" about-content ticket-content">
               <div class="about-image-container">
-                <img class="about-image-dark" src="{{ url_for('static', filename='assets/experience_dark.svg') }}"
+                <img class="about-image-dark" src="{{ url_for('static', filename='images/experience_dark.svg') }}"
                   alt="Experience" class="about-image" />
-                <img class="about-image-light" src="{{ url_for('static', filename='assets/experience.svg') }}"
+                <img class="about-image-light" src="{{ url_for('static', filename='images/experience.svg') }}"
                   alt="Experience" class="about-image" />
               </div>
 
@@ -106,9 +110,9 @@
           <div class="about-item ticket" id="beyondCodeTicket">
             <div class="about-content ticket-content">
               <div class="about-image-container">
-                <img class="about-image-dark" src="{{ url_for('static', filename='assets/beyond_code_dark.svg') }}"
+                <img class="about-image-dark" src="{{ url_for('static', filename='images/beyond_code_dark.svg') }}"
                   alt="Beyond Code" class="about-image" />
-                <img class="about-image-light" src="{{ url_for('static', filename='assets/beyond_code.svg') }}"
+                <img class="about-image-light" src="{{ url_for('static', filename='images/beyond_code.svg') }}"
                   alt="Beyond Code" class="about-image" />
               </div>
               <div class="about-text-container" id="beyondCodeText" style="display: none;">
@@ -174,25 +178,19 @@
               </div>
 
               <div class="contact-info-links">
+                {% for link in contact_info.links %}
                 <div>
                   <p>
-                    LinkedIn:
+                    {{ link.name }}:
                   </p>
-                  <a href="{{ contact_info.linkedin }}">{{ contact_info.linkedin }}</a>
-                </div>
-
-                <div>
-                  <p>
-                    GitHub:
-                  </p>
-                  <a href="{{ contact_info.github }}">{{ contact_info.github }}</a>
-                </div>
+                  <a href="{{ link.url }}">{{ link.url }}</a>
+                </div>  
+                {% endfor %}
                 <div>
                   <p>
                     Resume:
                   </p>
-                  <a href="https://raw.githubusercontent.com/adarsh270699/portfolio/refs/heads/main/static/assets/Resume.pdf"
-                    download>Download Resume</a>
+                  <a href="{{ url_for('static', filename='documents/Resume.pdf') }}" target="_blank" rel="noopener noreferrer">Download Resume</a>
                 </div>
               </div>
 
@@ -215,7 +213,7 @@
       </div>
     </footer>
     <div id="toast-container"></div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

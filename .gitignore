@@ -56,3 +56,15 @@ venv/
 ENV/
 env.bak/
 venv.bak/ 
+
+# Test artifacts    
+tests/
+tests/__pycache__/
+tests/test_app.py
+tests/test_app.pyc
+tests/test_app.pyo
+tests/test_app.pyd
+tests/test_app.pyw
+tests/test_app.pyz
+
+/docs
