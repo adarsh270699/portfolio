@@ -237,7 +237,7 @@ section {
     background-size: 3px 3px, 4px 4px;
     background-position: 0 0, 2px 2px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
     opacity: 0.3;
     animation: grain 8s steps(10) infinite;
 }
@@ -327,7 +327,7 @@ section {
     letter-spacing: 0.1em;
     line-height: 1;
     text-transform: uppercase;
-    font-size: clamp(4rem, 8vw, 12rem);
+    font-size: clamp(5rem, 8vw, 12rem);
     text-shadow:
         0.15rem 0.15rem 0 var(--primary-bg),
         0.4rem 0.4rem 0 var(--secondary-color);
@@ -704,10 +704,6 @@ section {
         height: 15px;
     }
 
-    .ticket {
-        padding: var(--padding-xs) 0;
-    }
-
     .contact-form {
         padding: var(--padding-md);
     }
@@ -723,7 +719,7 @@ section {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10000;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     gap: 10px;
