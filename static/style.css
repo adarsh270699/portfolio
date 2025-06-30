@@ -262,7 +262,7 @@ section {
 .footer-content {
     height: 64px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     background-color: var(--secondary-bg);
     display: flex;
     justify-content: center;
@@ -280,7 +280,7 @@ section {
     font-style: normal;
     letter-spacing: 0.1em;
     line-height: 1;
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 .nav-bar .ticket {
@@ -327,7 +327,7 @@ section {
     letter-spacing: 0.1em;
     line-height: 1;
     text-transform: uppercase;
-    font-size: clamp(5rem, 8vw, 12rem);
+    font-size: 14rem;
     text-shadow:
         0.15rem 0.15rem 0 var(--primary-bg),
         0.4rem 0.4rem 0 var(--secondary-color);
@@ -341,7 +341,7 @@ section {
     letter-spacing: 0.1em;
     line-height: 1;
     text-transform: uppercase;
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: 2.5rem;
     color: var(--secondary-color);
     font-style: italic;
 }
@@ -374,13 +374,13 @@ section {
 }
 
 .intro-text h2 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: 3.5rem;
     margin-bottom: var(--margin-xl);
 }
 
 .intro-text p {
     color: var(--secondary-color);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: 2.5rem;
     line-height: 1.2;
 }
 
@@ -392,10 +392,13 @@ section {
 
 
 .about-title {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: var(--primary-color);
     width: 100%;
     display: inline-block;
+}
+
+.about-title h2 {
+    font-size: 3.5rem;
 }
 
 .about-title .ticket {
@@ -470,7 +473,8 @@ section {
 }
 
 .about-text-container h3 {
-    font-size: 2rem
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 .about-text-container p {
@@ -484,10 +488,13 @@ section {
 }
 
 .contact-title {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
     color: var(--primary-color);
     width: 100%;
     display: inline-block;
+}
+
+.contact-title h2 {
+    font-size: 3.5rem;
 }
 
 .contact-title .ticket {
@@ -506,7 +513,6 @@ section {
 .contact-form {
     grid-column: span 5;
     padding: var(--padding-lg);
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
     line-height: 1.5;
     text-align: left;
     text-transform: none;
@@ -520,6 +526,7 @@ section {
 }
 
 .form-group label {
+    font-size: 2.5rem;
     display: block;
     margin-bottom: var(--margin-sm);
     color: var(--primary-color);
@@ -536,7 +543,7 @@ section {
     background-color: var(--primary-bg);
     color: var(--primary-color);
     font-family: var(--font-family-secondary);
-    font-size: 1.5rem;
+    font-size: 2rem;
     border-radius: 0;
     outline: none;
     transition: border-color 0.3s ease;
@@ -555,7 +562,6 @@ section {
 }
 
 .form-submit {
-
     text-align: center;
     display: flex;
     justify-content: center;
@@ -585,7 +591,7 @@ section {
     border: none;
     color: var(--primary-color);
     font-family: var(--font-family-secondary);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -615,6 +621,10 @@ section {
     text-transform: none;
 }
 
+.contact-info h3 {
+    font-size: 2.5rem;
+}
+
 .contact-info-details {
     display: flex;
     flex-direction: column;
@@ -623,7 +633,12 @@ section {
     margin-bottom: var(--margin-xl);
 }
 
+.contact-info-details p {
+    font-size: 2rem;
+}
+
 .contact-info-links {
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
